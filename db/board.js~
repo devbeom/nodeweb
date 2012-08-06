@@ -1,0 +1,11 @@
+var DATABASE = 'test';
+var TABLE = 'Member';
+var Client = require('mysql').Client;
+var client = new Client();
+
+
+client.user = 'root';
+client.password = '1234';
+client.useDatabase('test');
+
+

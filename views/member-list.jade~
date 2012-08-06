@@ -1,0 +1,7 @@
+h1 Result Set TEST!!!
+
+
+- each user, name in arr
+	ul#ListBody
+		li #{user.user_name} 
+		li #{user.user_email}

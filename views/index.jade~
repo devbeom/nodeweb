@@ -1,0 +1,12 @@
+h1 Node.js with HMTL5, CSS3
+
+ol.list
+	li
+		로그인
+	li 
+		a(href='/join') 회원가입
+	li
+		a(href='/member') 회원 목록
+	li 
+		a(href='/board') 게시판
+		

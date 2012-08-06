@@ -1,0 +1,108 @@
+!!!5
+html
+
+head
+script
+	
+	var ctx;	
+	var shipX = 0; // X position of ship
+	var shipY = 0; // Y position of ship
+	var back = new Image(); // storage for new background piece
+	var oldBack = new Image(); // storage for old background piece
+
+	function canvasSpaceGame() {
+	
+		ctx = document.getElementById("myCanvas").getContext("2d");
+		ctx.fillStyle = "black";
+		ctx.rect(0, 0, 500, 500);
+		ctx.fill();
+		
+		back = ctx.getImageData(0, 0, 30, 30);	
+		
+		MakeStars();
+		
+		makeShip();
+		
+		// Draw asteroids.
+		
+		//drawAsteroids();
+				
+	}
+	
+	
+	function MakeStars() {
+		// Draw 50 stars.
+		
+		
+		// Get random positions for stars.
+		
+		
+			var x = Math.floor(Math.random() * 400);
+			var y = 0;
+			
+			// Make the stars white
+			ctx.fillStyle = "#EEEEEE";
+			ctx.beginPath();
+			ctx.arc(x, y, 3, 0, Math.PI * 2, true);
+			ctx.closePath();
+			ctx.fill();
+			 
+			// Save black background.
+			
+		
+		//oldBack = ctx.getImageData(0, 0, 30, 30);
+	}
+	
+	function makeShip() {
+	
+		ctx.beginPath();
+		ctx.moveTo(28.4, 16.9);
+		ctx.bezierCurveTo(28.4, 19.7, 22.9, 22.0, 16.0, 22.0);
+		ctx.bezierCurveTo(9.1, 22.0, 3.6, 19.7, 3.6, 16.9);
+		ctx.bezierCurveTo(3.6, 14.1, 9.1, 11.8, 16.0, 11.8);
+		ctx.bezierCurveTo(22.9, 11.8, 28.4, 14.1, 28.4, 16.9);
+		ctx.closePath();
+		ctx.fillStyle = "rgb(222, 103, 0)";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.moveTo(22.3, 12.0);
+		ctx.bezierCurveTo(22.3, 13.3, 19.4, 14.3, 15.9, 14.3);
+		ctx.bezierCurveTo(12.4, 14.3, 9.6, 13.3, 9.6, 12.0);
+		ctx.bezierCurveTo(9.6, 10.8, 12.4, 9.7, 15.9, 9.7);
+		ctx.bezierCurveTo(19.4, 9.7, 22.3, 10.8, 22.3, 12.0);
+		ctx.closePath();
+		ctx.fillStyle = "rgb(51, 190, 0)";
+		ctx.fill();
+		
+		ship = ctx.getImageData(0, 0, 30, 30);
+		
+		//ctx.putImageData(oldBack, 0, 0);
+	}
+	
+	function drawAsteroids() {
+		// Draw asteroids.
+		
+		for (i = 0; i <= 20; i++) {
+			// Get random positions for asteroids.
+			var a = Math.floor(Math.random() * 299);
+			var b = Math.floor(Math.random() * 299);
+			// Make the asteroids red
+			ctx.fillStyle = "#FF0000";
+			// Keep the asteroids far enough away from
+			// the beginning or end.
+			if (a > 40 && b > 40 && a < 270 && b < 270) {
+				// Draw an individual asteroid.
+				ctx.beginPath();
+				ctx.arc(a, b, 10, 0, Math.PI * 2, true);
+				ctx.closePath();
+				ctx.fill();
+			} else--i;
+		}
+	}
+	
+	
+	
+body(onload="canvasSpaceGame()")
+	h1 Stage Panel
+	canvas#myCanvas(width="500", height="500")

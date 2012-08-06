@@ -1,0 +1,7 @@
+h1 Result Set TEST!!!
+
+- var aaa = arr
+
+
+- each user, name in aaa
+	li #{user.name} : #{user.idx}

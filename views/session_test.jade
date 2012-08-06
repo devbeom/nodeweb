@@ -1,0 +1,11 @@
+h1 Session Test
+
+form(name='sesForm', method='post', action='/session_test')
+	input(type='text', name='sesValue')
+	input(type='submit', value='SubMit')
+
+
+- if (sesValue != '')
+	p Session Value : #{sesValue}
+- else
+	p Session Value : Null

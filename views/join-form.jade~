@@ -1,0 +1,46 @@
+script(type="text/javascript")
+	$(document).ready(function() {
+		
+		$("#form1").submit(function(e){
+			if($("#user_id").val() == '') {
+				alert("아이디를 입력해 주세요.");
+				$("#user_id").focus();
+				return false;
+			} else if($("#user_pass").val() == '') {
+				alert("비밀번호를 입력해 주세요.");
+				$("#user_pass").focus();
+				return false;
+			} else if($("#user_name").val() == '') {
+				alert("이름을 입력해 주세요");
+				$("#user_name").focus();
+				return false;
+			} else if($("#user_email").val() == '') {
+				alert("이메일을 입력해 주세요");
+				$("#user_email").focus();
+				return false;
+			}
+		});
+		
+	});
+	
+	function go_main() {
+		location.href = '/';
+	}	
+
+form.FormJoin(id="form1", method="post", action="/join")
+	fieldset
+		legend WebForm Of HTML5	
+		p
+			label(for="user_id") 아이디 : 
+			input(type="text", name="user_id", id="user_id")
+		p
+			label(for="user_pass") 비밀번호 : 
+			input(type="password", name="user_pass", id="user_pass")
+		p
+			label(for="name") 이름 :
+			input(type="text", name="user_name", id="user_name")
+		p
+			label(for="email") 이메일 : 
+			input(type="text", name="user_email", id="user_email")
+	input(type="submit", value="SubMit")
+	input(type="button", value="Main" ,onclick='go_main()')

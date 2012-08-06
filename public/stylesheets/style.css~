@@ -1,0 +1,55 @@
+body {
+  padding: 0;
+  margin: 10;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.list {
+	list-style-type: square;
+}
+
+.list li {
+	padding-bottom: 10px;
+}
+
+.lb01 {
+	width:100px;
+}
+
+.FormJoin {
+	width:450px;
+	margin:0 0 0 0;
+	padding: 30px 30px;
+	background-color: #2d2d2d;
+	border-radius: 20px;
+}
+
+
+fieldset {
+	padding: 0 20px 20px;
+	margin:0 0 30px;
+	border: 2px solid #ffffff;
+	background-color: #B8B8B8;
+	border-radius: 10px;
+}
+
+legend {
+	color: #ffffff;
+	background-color: #990033;
+	font-size:0.9em;
+	font-weight: bold;
+	text-align: left;
+	padding: 5px;
+	margin: 0;
+	width: 10em;
+	border: 2px solid #660033;
+	border-radius: 5px;
+}
+
+.listBody {
+	
+}

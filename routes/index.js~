@@ -1,0 +1,44 @@
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res){
+  res.render('index', { title: 'Express' })
+};
+
+exports.stage = function(req, res){
+	res.render('game-stage', { title: 'Express' })
+};
+
+
+exports.form = function(req, res) {
+	res.render('join-form', {title : 'Express' });	
+};
+
+
+exports.join = function(req, res) {
+
+	var db = require('../db/member');
+	
+	db.hasNameAndEmail(req.body, function(err, results) {
+		if(results.length > 0) {
+			console.log('등록된 아이디가 있습니다.');
+		}
+		else {
+			console.log('등록된거 없습');
+		}
+	});
+	
+};
+
+exports.member = function(req,res) {
+	var db = require('../db/member');
+	db.SelectList(req.body, function(err, results) {
+		res.render('member-list', {
+			title: 'Express'
+			, arr: results
+		});
+	});
+};
+

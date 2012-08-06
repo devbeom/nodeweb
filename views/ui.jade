@@ -1,0 +1,106 @@
+!!!5
+
+script
+	$(document).ready(function() {
+		$("#accordion").accordion({ header: "h3" });
+		
+		// Dialog
+		$('#dialog').dialog({
+			autoOpen: false,
+			width: 600,
+			buttons: {
+				"Ok": function() {
+					$(this).dialog("close");
+				},
+				"Cancel": function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		
+		$('#tabs').tabs();
+		
+		// Dialog Link
+		$('#dialog_link').click(function(){
+			$('#dialog').dialog('open');
+			return false;
+		});
+		
+		//hover states on the static widgets
+		$('#dialog_link, ul#icons li').hover(
+			function() { $(this).addClass('ui-state-hover'); },
+			function() { $(this).removeClass('ui-state-hover'); }
+		);
+				
+	});
+	
+
+h1#h Jquery UI
+
+div#accordion
+	div
+		h3 
+			a 내용을 길게 넣어 보자
+		div
+			p 제목 : 1111
+			p 내용
+			p 1234124412412412412412412424124214124
+			p 1234124412412412412412412424124214124
+			p 1234124412412412412412412424124214124
+			p 1234124412412412412412412424124214124
+			p 1234124412412412412412412424124214124
+			p 1234124412412412412412412424124214124
+	
+	div
+		h3 
+			a 두번째 레이아웃
+		div Just 2
+			input(type="button", value="join")
+	
+
+
+h2.demoHeaders Dialog
+
+a#dialog_link.dialog_link.ui-state-default.ui-corner-all
+	span.ui-icon.ui-icon-newwin
+	| 회원가입
+	
+	
+div#dialog(title="Window01")
+	p Dialog Content
+
+p
+	input(type="text")
+	input(type="button", value="BTN01")
+	
+h2.demoHeaders Tabs
+
+div#tabs
+	ul
+		li
+			a(href='#tabs-1') 01
+		li
+			a(href='#tabs-2') 02
+		li
+			a(href='#tabs-3') 03
+	div#tabs-1 Tab01
+		| 내용을 길게 적어 봅시다.
+		| 계속 적어 봅시다
+		br
+		| 12341234
+		p 12341234
+		p 123412314
+	div#tabs-2 Tab02
+	div#tabs-3 Tab03
+	
+p
+	input(type='checkbox')
+	input(type='radio')]
+
+p
+	input(type='textarea', width='200', height='200')	
+
+
+
+p
+	<p>안녕하세요</p><p><br></p><p>저는 누구누구입니다.</p><p><br></p><p>만나서 방갑습니다.</p><p><br></p><p><span style="font-weight: bold;">이것은 네이버 스마트 에디터 테스트 중입니다.</span><br></p>

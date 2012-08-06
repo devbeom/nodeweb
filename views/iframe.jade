@@ -1,0 +1,45 @@
+h1 IFRAME & Smart Editor
+
+script
+	$(function() {
+
+		$("document").submit(function() {
+			alert("body submit");
+		});
+
+
+		$("form").submit(function() {
+			alert('submit');
+			return false;
+		});
+
+		$("button").click(function () {
+
+		}
+
+
+	});
+
+	function check() {
+		alert('1234');
+	}
+
+	function a1() {
+		$("#aaa").submit();
+	}
+
+	function a2() {
+		document.aaa.submit();
+	}
+
+
+
+
+form(id="aaa", name="aaa")
+	input(type="text", value="1234")
+	input(type="button", value="Jquery/Submit", onclick='a1()')
+	input(type="button", value="JS/Submit", onclick='a2()')
+	input(type="submit", value="Form/Submit")
+
+
+// iframe(frameborder="0", width="1000", height="600", src="/SE2/SmartEditor2.html")

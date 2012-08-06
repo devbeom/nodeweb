@@ -1,0 +1,18 @@
+h1 Member List
+
+script
+	$(document).ready(function() {
+		$("#accordion").accordion({ header: "h3" });
+	});
+
+div(style="width:100%;")
+	div#accordion
+		each user, name in arr
+			div
+				h3
+					a NAME : #{user.Name}
+				div
+					p #{user.CountryCode}
+					p
+						input(type="text")
+						input(type='button', value='수정')

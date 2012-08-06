@@ -1,0 +1,54 @@
+var DATABASE = 'test';
+var TABLE = 'Member';
+var Client = require('mysql').Client;
+var client = new Client();
+
+
+client.user = 'root';
+client.password = '1234';
+client.useDatabase('world');
+
+var mysqlUtil = module.exports = {
+		
+		insertUser: function(user, callback) {
+			client.query(
+				'insert into ' + TABLE + ' SET user_id=?, user_pass=?, user_name=?, user_email=?'
+				, [user.user_id, user.user_pass, user.user_name
+					, user.user_email]
+				, callback
+			);
+		}, 
+		
+		hasNameAndEmail: function(user, callback) {
+			client.query(
+				'select * from ' + TABLE + ' where user_name=? or user_email=? or user_id=?'
+				, [user.user_name, user.user_email, user.user_id]
+				, callback
+			);
+		},
+		
+		
+		SelectList: function(user, callback) {
+			client.query(
+				"select * from city limit 10 "
+				,callback
+			);
+		}
+};
+
+
+/*
+
+function(err, results) {
+					if(err)
+						throw err;
+					if(results.length > 0) {
+						res.render('join-fail', {
+							title: "join-fail"
+						});
+					} else {
+						mysqlUtil.insertUser(user,res);
+					}
+				}
+				
+*/

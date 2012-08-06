@@ -1,0 +1,73 @@
+
+
+a {
+  color: #00B7FF;
+}
+
+.list {
+	list-style-type: square;
+}
+
+.list li {
+	padding-bottom: 10px;
+}
+
+.lb01 {
+	width:100px;
+}
+
+.FormJoin {
+	width:450px;
+	margin:0 0 0 0;
+	padding: 30px 30px;
+	background-color: #2d2d2d;
+	border-radius: 20px;
+}
+
+h1 {
+	color:#92B91C;
+}
+fieldset {
+	padding: 0 20px 20px;
+	margin:0 0 30px;
+	border: 2px solid #ffffff;
+	background-color: #B8B8B8;
+	border-radius: 10px;
+}
+
+legend {
+	color: #ffffff;
+	background-color: #990033;
+	font-size:0.9em;
+	font-weight: bold;
+	text-align: left;
+	padding: 5px;
+	margin: 0;
+	width: 10em;
+	border: 2px solid #660033;
+	border-radius: 5px;
+}
+
+.ListBody {
+	list-style-type:none;
+	margin:0 10px 10px 10px;
+	padding:0;
+	border:1px solid blue;
+}
+
+.ListBody li {
+
+}
+
+
+.bbsHeader td{
+	color: gray;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+.bbsBody td {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid silver;
+}

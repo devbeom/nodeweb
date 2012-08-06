@@ -1,0 +1,13 @@
+.postit_leftDiv {
+	border:1px solid red;
+	width:800px;
+	float:left;
+	height:700px;
+}
+
+.postit_rightDiv {
+	border:1px solid blue;
+	width:200px;
+	float:left;
+	height:700px;
+}

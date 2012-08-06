@@ -1,0 +1,41 @@
+script(type='text/javascript', src='/socket.io/socket.io.js')
+script(type='text/javascript')
+	$(function() {
+		var room = io.connect('/room');
+		var chatWindow = $('#chatWindow');
+		var msgBox = $('#msg');
+		var myName = $('#myName');
+
+
+		function showMsg(msg) {
+			chatWindow.append($('<p').text(msg));
+			chatwindow.scrollTop(chatWindow.height();
+		}
+
+		room.on('connect', function() {
+				room.emit('join', {
+					roomName:$('#roomName').text()
+					,nickName:myName
+				});
+			}
+
+		});
+
+		room.on('joined', function(data) {
+			if(data.isBool) {
+				showMsg(data.nickName + ' 님이 입장하셨습니다.');
+			}
+		});
+	});
+
+h1 방제 :
+	span#roomName=' '  + roomName
+
+div#chatWindow.chatWindow
+
+div.chatUsers
+	p 참가자
+form
+	span#myName #{userName} :
+	input#msg(type='text', style='width:300px;')
+	input(type='submit', value='전송')

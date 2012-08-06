@@ -1,0 +1,18 @@
+script
+	$(function() {
+		$('form').submit(function(e) {
+			
+			if($.trim($('#nick').val()) === '') {
+				alert('대화명을 입력해 주세요.');
+				return false;
+			}
+
+		});
+	});
+
+h1 채팅방 입장하기
+
+form(action='/chat_enter', method='post')
+	p='대화명 : '
+		input#nick(type="text", name="nick")
+		input(type="submit", value="Enter")
